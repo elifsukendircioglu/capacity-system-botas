@@ -1,0 +1,5 @@
+ALTER TABLE public."Capacity"
+  ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'pending',
+  ADD COLUMN created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+  ADD COLUMN approved_by INTEGER REFERENCES users(id),
+  ADD COLUMN approved_at TIMESTAMP;
