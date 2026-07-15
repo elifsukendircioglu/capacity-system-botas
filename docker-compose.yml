@@ -6,6 +6,8 @@ services:
       - "3000:3000"
     env_file:
       - ./.env
+    environment:
+      - TZ=Europe/Istanbul
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -19,3 +21,22 @@ services:
       - /app/node_modules
     stdin_open: true
     tty: true
+    environment:
+      - TZ=Europe/Istanbul
+
+  tahsisat-worker:
+    build: ./TahsisatWorkerService
+    restart: always
+    ports:
+      - "5000:8080"
+    environment:
+      - TZ=Europe/Istanbul
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__BotasDb=Host=host.docker.internal;Port=5432;Database=proje1;Username=postgres;Password=123456
+      - AllocationSettings__DailyRunHour=12
+      - AllocationSettings__DailyRunMinute=0
+      - AllocationSettings__CapacityMultiplier=2.5
+      - AllocationSettings__TimeZoneId=Europe/Istanbul
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+ 

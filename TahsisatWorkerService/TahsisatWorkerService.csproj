@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <RootNamespace>TahsisatWorkerService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- PostgreSQL erişimi için -->
+    <PackageReference Include="Npgsql" Version="8.0.3" />
+    <!-- Zamanlanmış görevler için (cron benzeri ifadeler) -->
+    <PackageReference Include="Cronos" Version="0.9.0" />
+  </ItemGroup>
+
+</Project>

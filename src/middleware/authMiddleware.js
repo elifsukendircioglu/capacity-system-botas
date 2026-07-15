@@ -7,7 +7,7 @@ function authMiddleware(req, res, next) {
     return res.status(401).json({ error: 'Token gerekli' });
   }
 
-  const token = authHeader.split(' ')[1]; // "Bearer xxxxx" -> "xxxxx"
+  const token = authHeader.split(' ')[1];
 
   if (!token) {
     return res.status(401).json({ error: 'Token gerekli' });
@@ -15,8 +15,8 @@ function authMiddleware(req, res, next) {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // token içindeki bilgiyi (userId, username) req'e ekliyoruz
-    next(); // her şey doğruysa, isteğin devam etmesine izin ver
+    req.user = decoded;
+    next();
   } catch (err) {
     return res.status(403).json({ error: 'Geçersiz veya süresi dolmuş token' });
   }

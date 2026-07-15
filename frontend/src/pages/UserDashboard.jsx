@@ -3,10 +3,12 @@ import { useAuth } from '../context/AuthContext';
 import PointsSection from '../components/PointsSection';
 import CapacitySection from '../components/CapacitySection';
 import ReserveSection from '../components/ReserveSection';
+import AllocationHistorySection from '../components/AllocationHistorySection';
 
 const tabs = [
   { key: 'main', label: 'Noktalarım & Kapasite' },
   { key: 'reserve', label: 'Rezerv Girişi' },
+  { key: 'allocation', label: 'Tahsisatlarım' },
 ];
 
 export default function UserDashboard() {
@@ -51,6 +53,7 @@ export default function UserDashboard() {
           </>
         )}
         {activeTab === 'reserve' && <ReserveSection />}
+        {activeTab === 'allocation' && <AllocationHistorySection />}
       </main>
     </div>
   );

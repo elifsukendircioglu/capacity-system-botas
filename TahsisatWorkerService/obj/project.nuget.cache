@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JXX/VjIBTrU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\elifs\\Desktop\\files\\TahsisatWorkerService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\elifs\\.nuget\\packages\\cronos\\0.9.0\\cronos.0.9.0.nupkg.sha512",
+    "C:\\Users\\elifs\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

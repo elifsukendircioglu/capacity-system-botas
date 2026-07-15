@@ -4,7 +4,7 @@ import PendingPointsSection from '../components/PendingPointsSection';
 import CapacityApprovalsSection from '../components/CapacityApprovalsSection';
 import AllocationSection from '../components/AllocationSection';
 import ReportsSection from '../components/ReportsSection';
-
+import AllocationHistorySection from '../components/AllocationHistorySection';
 const tabs = [
   { key: 'approvals', label: 'Onaylar' },
   { key: 'allocation', label: 'Tahsisat' },
@@ -52,7 +52,12 @@ export default function AdminDashboard() {
             <CapacityApprovalsSection />
           </>
         )}
-        {activeTab === 'allocation' && <AllocationSection />}
+      {activeTab === 'allocation' && (
+        <>
+          <AllocationSection />
+          <AllocationHistorySection />
+        </>
+        )}
         {activeTab === 'reports' && <ReportsSection />}
       </main>
     </div>
